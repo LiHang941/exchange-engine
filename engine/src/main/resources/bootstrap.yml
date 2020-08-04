@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: exchange-engine-service
+  profiles:
+    active: lihang
+---
+
+management:
+  server:
+    port: 8101
+
+spring:
+  profiles: lihang
+  cloud:
+    config:
+      profile: lihang
+      label: master
+      uri: http://localhost:8888/
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        register: true
+        prefer-ip-address: true
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://192.168.2.245:8888/
+
+---
+spring:
+  profiles: prod
+  cloud:
+    config:
+      profile: prod
+      label: master
+      uri: http://localhost:8888/

@@ -1,0 +1,6 @@
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
+    compile "com.github.LiHang941.common-lib:common-lib:$lihangCommonLibVersion"
+    compile "com.alibaba:fastjson:1.2.68"
+    compileOnly "io.springfox:springfox-swagger2:$springfoxVersion"
+}
